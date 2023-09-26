@@ -89,13 +89,43 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
   
 
 ## STM 32 CUBE PROGRAM :
+```
+#include "main.h"
+#include "stdbool.h"
+int main(void)
+{
+  HAL_Init();  
+  SystemClock_Config();
+  MX_GPIO_Init();
+  while (1)
+  {
+  }
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+	if((GPIO_Pin == GPIO_PIN_0)){
+		HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_1);
+	}
+}
+```
 
 
 
 ## Output screen shots of proteus  :
+
+i.) when the push button is in OFF state:
+
+![image](https://github.com/shoaib3136/EXPERIMENT-06-INTERRUPT-GENERATION-USING-PUSHBUTTON-AND-SIMULATING-THE-OUTPUT-/assets/117919362/283b5d5c-27a3-4db1-9ef5-150831cc4ce0)
+
+ii.) when the push button is in ON state:
+
+![image](https://github.com/shoaib3136/EXPERIMENT-06-INTERRUPT-GENERATION-USING-PUSHBUTTON-AND-SIMULATING-THE-OUTPUT-/assets/117919362/6b938ba1-c381-4e7d-90ae-47a2643f7632)
+
  
  
  ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
+ ![image](https://github.com/shoaib3136/EXPERIMENT-06-INTERRUPT-GENERATION-USING-PUSHBUTTON-AND-SIMULATING-THE-OUTPUT-/assets/117919362/30b3747b-c724-43a8-a9cf-e9e5b9cef3d6)
+
  
  
 ## Result :
